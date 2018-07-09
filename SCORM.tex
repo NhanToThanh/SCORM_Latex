@@ -1,0 +1,197 @@
+\documentclass[12pt,a4paper,oneside]{book} % twoside for draf
+
+%\usepackage{babel}
+%\usepackage[T1,T5]{fontenc}
+\usepackage[utf8]{vietnam}
+\usepackage[utf8]{inputenc}
+%\usepackage{times}
+%\usepackage{graphicx}
+%\usepackage{textcomp}
+%\usepackage[backend=biber]{biblatex}
+
+\usepackage[nottoc]{tocbibind}
+%\addbibresource{bibbio.bib} % The filename of the bibliography
+
+
+%\usepackage[english,vietnam]{babel}
+
+\usepackage{array}
+\usepackage{floatrow}
+\usepackage{comment}
+\usepackage{ragged2e}
+\floatsetup[table]{capposition=top}
+\usepackage[unicode]{hyperref}
+\usepackage{tabularx, caption}
+\usepackage{caption}
+%\setlength{\parindent}{0pt}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage[]{inputenc}
+%\usepackage[francais]{babel}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage{a4wide,amssymb,epsfig,latexsym,multicol,array,hhline,fancyhdr}
+\usepackage{boxedminipage}
+\usepackage{amsmath}
+\usepackage{lastpage}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}							% Standard graphics package
+\usepackage{array}
+\usepackage{tabularx, caption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{graphics}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{tikz}
+
+
+
+\usetikzlibrary{arrows,snakes,backgrounds}
+
+\usepackage{tocloft,calc}
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+%\usepackage{pstcol} 								% PSTricks with the standard color package
+\usepackage{mathptmx}	% same Time New Roma
+%\renewcommand{\rmdefault}{phv} % Arial
+%\renewcommand{\sfdefault}{phv} % Arial
+
+\usepackage{fancyhdr}
+\usepackage{algorithm2e}
+\usepackage{bkthesis}
+
+
+
+
+
+
+%\renewcommand\thesubsection{\arabic{subsection}}
+\renewcommand\thechapter{\arabic{chapter}}
+\renewcommand\thesection{\Roman {section}.}
+\renewcommand\thesubsection{\arabic{subsection}.}
+%\renewcommand\thesubsubsection{\thesubsection .\arabic{subsubsection}}
+
+\renewcommand{\cftchappresnum}{CHƯƠNG }
+\AtBeginDocument{\addtolength\cftchapnumwidth{\widthof{\bfseries CHƯƠNG }}}
+
+%\renewcommand\thesubsection{\arabic{subsection}}
+
+%\csdeptname{KHOA ĐIỆN ĐIỆN TỬ}
+%\crname{BÁO CÁO THỰC TẬP TỐT NGHIỆP}
+% \crname{BÁO CÁO TIỂU LUẬN}
+\title{MỞ RỘNG CHỨC NĂNG CHO MỘT HỆ THỐNG HỖ TRỢ XÂY DỰNG DỮ LIỆU THEO CHUẨN SCORM}	
+\cstuname{SVTH:\\1. Nguyễn Duy Minh - 1412279\\2. Tô Thành Nhân - 1412643}
+
+
+\csCouncil{Khoa học máy tính (Hội đồng 1)}
+\csSupervise{TS. Nguyễn Hứa Phùng}
+\csReviewer{ ThS. Trần Giang Sơn}
+\cttime{6/2018}
+
+\thesislayout
+
+
+
+\begin{document}
+%-	Bìa cứng - màu xanh dương, chữ mạ vàng (xem mẫu đính kèm)
+%-	Trang tên (tờ lót): chất liệu giấy, nội dung giống như bìa LV
+%-	Ở gáy LV: in nhan đề LV (có thể in tóm tắt nếu nhan đề quá dài), size 15 – 17
+%-	Phiếu Nhiệm vụ LV, chấm điểm Hướng dẫn & Phản biện (đã ký): nhận từ GVHD & GVPB sau khi bảo vệ (theo lịch hẹn).
+%-	Lời cam đoan
+%-	Lời cảm ơn/ Lời ngỏ
+%-	Tóm tắt LV
+%-	Mục lục
+%-	Danh mục, bảng biểu, hình ảnh, ... (nếu có)
+%-	Nội dung LV
+%-	Danh mục TL tham khảo
+%-	Phụ lục (nếu có)
+
+\coverpage
+
+\frontmatter
+
+% add content here
+%-	Lời cam đoan
+\begin{declaration}
+	\noindent Luận văn của chúng tôi có tham khảo các tài liệu, bài báo, trang web như được trình bày ở
+	mục tài liệu tham khảo và ở mỗi tham khảo chúng tôi đều trích dẫn nguồn gốc. Chúng tôi xin cam
+	đoan rằng ngoài những trích dẫn từ các tham khảo trên, toàn bộ nội dung trong báo cáo
+	là do chúng tôi tự soạn thảo từ những kết quả nghiên cứu của chúng tôi, không sao chép từ bất
+	kỳ tài liệu nào khác.\\
+	Các số liệu, kết quả nêu trong báo cáo luận văn tốt nghiệp là trung thực và chưa từng được ai công bố trong bất kỳ công trình nào khác.\\
+	Chúng tôi xin cam đoan rằng mọi sự giúp đỡ cho việc thực hiện báo cáo luận văn tốt
+	nghiệp này đã được cảm ơn và các thông tin trích dẫn trong báo cáo đã được ghi rõ nguồn gốc.\\
+	
+\hspace{7cm} Sinh viên thực hiện\\
+
+\hspace{5cm}	Nguyễn Duy Minh \hspace{1.5cm} Tô Thành Nhân\\
+
+\end{declaration}
+
+%-	Lời cảm ơn
+\begin{acknowledgments}
+Để hoàn thành được đề tài luận văn tốt nghiệp này, chúng em đã phải cần đến rất nhiều sự giúp đỡ. Chúng em xin chân thành cảm ơn
+\begin{itemize}
+	\item Ban giám hiệu nhà trường đã quan tâm và tạo điều kiện thuận lợi cho chúng em học tập và rèn luyện.
+	\item Các Thầy Cô Khoa Khoa Học và Kỹ Thuật Máy Tính đã tận tâm giảng dạy, truyền đạt những kiến thức quý báu về công nghệ thông tin, là nền tảng để chúng em thực hiện đề tài luận văn này.
+	\item Thầy Nguyễn Hứa Phùng đã truyền đạt cho chúng em kiến thức nền tảng và hướng dẫn chúng em hoàn thành Luận văn Tốt nghiệp này.
+	\item Cuối cùng, chúng con xin ghi tạc công ơn nuôi dưỡng và dạy dỗ của Cha Mẹ.
+\end{itemize}
+Với những kiến thức đã được học ở trường, chúng em mong muốn một ngày nào đó sẽ đóng góp một phần công sức của mình để xây dựng xã hội.
+\vspace{1cm}
+\begin{flushright}
+Sinh viên:\\
+Nguyễn Duy Minh\\
+Tô Thành Nhân\\
+\end{flushright}
+
+\end{acknowledgments}
+
+%
+\begin{abstract}
+% Tóm tắt luận văn
+\end{abstract}	
+	
+\tableofcontents
+%\listofsymbols
+\newpage
+\listoftables
+\newpage
+\listoffigures
+%\listofalgorithms
+
+
+\mainmatter
+
+\fancyhead{}  % Clears all page headers and footers
+%\rhead{\thepage}  % Sets the right side header to show the page number
+%\lhead{}  % Clears the left side page header
+%\fancyfoot[positions]{footer}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
+
+\input{Chapter1/Chapter1.tex}
+\input{Chapter2/Chapter2.tex}
+\input{Chapter3/Chapter3.tex}
+\input{Chapter4/Chapter4.tex}
+\input{Chapter5/Chapter5.tex}
+\input{Chapter6/Chapter6.tex}
+
+%-	Danh mục TL tham khảo
+%-	Phụ lục (nếu có)
+
+
+
+\end{document}
+
+
+
+
